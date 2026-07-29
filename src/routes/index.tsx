@@ -1,18 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ArrowRight,
+  Download,
+  ExternalLink,
+  Code2,
+  Brain,
+  Wrench,
+  GraduationCap,
+  Target,
+  Sparkles,
+  BookOpen,
+  Award,
+} from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fareed Manawwar — AI Agent Builder & Prompt Engineer" },
+      { title: "Fareed Manawwar — Computer Science Student & Aspiring AI Engineer" },
       {
         name: "description",
         content:
-          "Portfolio of Fareed Manawwar — B.Tech student at AKTU, aspiring AI agent builder and prompt engineer. Skills, projects, resume, and contact.",
+          "Portfolio of Fareed Manawwar — B.Tech CSE student passionate about AI, software development, and building meaningful projects.",
       },
-      { property: "og:title", content: "Fareed Manawwar — AI Agent Builder & Prompt Engineer" },
+      { property: "og:title", content: "Fareed Manawwar — Aspiring AI Engineer" },
       {
         property: "og:description",
-        content: "Introductory portfolio: profile, skills, projects, goals, and resume.",
+        content: "B.Tech CSE student focused on AI, prompt engineering, and modern software.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -20,303 +36,341 @@ export const Route = createFileRoute("/")({
     links: [
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
       },
     ],
   }),
   component: Index,
 });
 
-const skills = [
-  { name: "C", level: "Proficient" },
-  { name: "C++", level: "Working knowledge" },
-  { name: "Python", level: "Learning" },
-  { name: "Prompt Engineering", level: "Practicing" },
-  { name: "AI Agent Design", level: "Exploring" },
+const navLinks = [
+  { label: "Home", href: "#top" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Contact", href: "#contact" },
 ];
 
-const focusAreas = [
+const timeline = [
+  { icon: GraduationCap, title: "B.Tech Computer Science", body: "Dr. A.P.J. Abdul Kalam Technical University (AKTU)." },
+  { icon: BookOpen, title: "First Year Completed", body: "Foundations in computing, mathematics, and programming." },
+  { icon: Award, title: "CGPA", body: "To be updated." },
+  { icon: Brain, title: "Learning AI Agents", body: "Studying agent design, tool use, and orchestration." },
+  { icon: Sparkles, title: "Learning Prompt Engineering", body: "Practicing structured, reliable prompting techniques." },
+  { icon: Code2, title: "Learning C Programming", body: "Strengthening low-level and algorithmic thinking." },
+  { icon: Target, title: "Goal", body: "Become an AI Engineer building dependable, real-world systems." },
+];
+
+const skillGroups = [
   {
-    code: "01",
-    title: "AI Agent Architecture",
-    body: "Studying agent loops, tool use, memory design, and orchestration patterns for autonomous systems.",
+    icon: Code2,
+    title: "Programming",
+    items: [
+      { name: "C", note: "" },
+      { name: "Python", note: "Learning" },
+    ],
   },
   {
-    code: "02",
-    title: "Prompt Engineering",
-    body: "Crafting structured, context-aware prompts to steer model behavior for reliable, task-specific outputs.",
+    icon: Brain,
+    title: "AI",
+    items: [
+      { name: "Prompt Engineering", note: "" },
+      { name: "AI Agents", note: "" },
+    ],
   },
   {
-    code: "03",
-    title: "Programming Fundamentals",
-    body: "Strengthening algorithmic thinking in C and C++, and expanding into Python for AI tooling.",
+    icon: Wrench,
+    title: "Tools",
+    items: [
+      { name: "Git", note: "" },
+      { name: "GitHub", note: "" },
+      { name: "VS Code", note: "" },
+    ],
+  },
+];
+
+const projects = [
+  {
+    title: "Portfolio Website",
+    description:
+      "A minimal, modern developer portfolio built with React and TanStack Start, focused on clarity, performance, and accessibility.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/1-Fareed",
+    demo: "#",
+  },
+  {
+    title: "More projects in progress",
+    description:
+      "AI-agent experiments and small engineering projects will appear here as they are completed and published.",
+    tech: ["Python", "LLMs", "Agents"],
+    github: "https://github.com/1-Fareed",
+    demo: "#",
+  },
+];
+
+const certifications = [
+  {
+    title: "Certifications in progress",
+    issuer: "Coursework & self-study",
+    body: "Actively pursuing certifications in AI, prompt engineering, and programming. Verified credentials will appear here.",
   },
 ];
 
 function Index() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative">
       {/* NAV */}
-      <header className="sticky top-0 z-20 border-b border-border/60 bg-background/70 backdrop-blur-md">
+      <header className="glass-nav sticky top-0 z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#top" className="font-display text-sm tracking-widest text-primary text-glow">
-            &lt;FM/&gt;
+          <a href="#top" className="text-sm font-semibold tracking-tight">
+            Fareed<span className="text-sky-400">.</span>
           </a>
-          <nav className="hidden gap-8 font-display text-xs uppercase tracking-[0.2em] text-muted-foreground md:flex">
-            <a href="#about" className="hover:text-primary transition">About</a>
-            <a href="#skills" className="hover:text-primary transition">Skills</a>
-            <a href="#focus" className="hover:text-primary transition">Focus</a>
-            <a href="#projects" className="hover:text-primary transition">Projects</a>
-            <a href="#contact" className="hover:text-primary transition">Contact</a>
+          <nav className="hidden gap-7 text-sm text-white/70 md:flex">
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href} className="transition hover:text-white">
+                {l.label}
+              </a>
+            ))}
           </nav>
-          <a
-            href="#contact"
-            className="rounded-md border border-primary/50 px-3 py-1.5 font-display text-[11px] uppercase tracking-[0.2em] text-primary hover:shadow-glow transition"
-          >
-            Connect
+          <a href="#contact" className="btn-primary btn-primary-hover !py-2 !px-4 text-xs">
+            Get in touch
           </a>
         </div>
       </header>
 
       {/* HERO */}
-      <section id="top" className="mx-auto max-w-6xl px-6 pt-24 pb-20">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr] md:items-end">
-          <div>
-            <span className="chip">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" />
-              System online — Portfolio v1.0
-            </span>
-            <h1 className="mt-6 font-display text-5xl leading-[1.05] text-foreground md:text-7xl">
-              Fareed
-              <br />
-              <span className="text-primary text-glow">Manawwar</span>
-              <span
-                aria-hidden
-                className="ml-2 inline-block h-[0.9em] w-[0.5ch] translate-y-1 bg-primary align-middle"
-                style={{ animation: "blink 1s steps(2) infinite" }}
-              />
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              AI Agent Builder <span className="text-primary">/</span> Prompt Engineer in training.
-              B.Tech (2nd year) student at Dr. A.P.J. Abdul Kalam Technical University, engineering
-              a path toward autonomous, reliable AI systems.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#projects"
-                className="rounded-md bg-primary px-5 py-2.5 font-display text-xs uppercase tracking-[0.2em] text-primary-foreground shadow-glow hover:opacity-90 transition"
-              >
-                View Work
-              </a>
-              <a
-                href="#resume"
-                className="rounded-md border border-accent/60 px-5 py-2.5 font-display text-xs uppercase tracking-[0.2em] text-accent hover:shadow-glow-accent transition"
-              >
-                Resume
-              </a>
-            </div>
+      <section id="top" className="mx-auto max-w-6xl px-6 pt-24 pb-24 md:pt-32 md:pb-32">
+        <div className="animate-fade-up max-w-3xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70">
+            <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+            Available for opportunities
           </div>
-
-          <div className="surface-card p-6">
-            <div className="flex items-center justify-between border-b border-border pb-3">
-              <span className="font-display text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                identity.sys
-              </span>
-              <span className="flex gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-accent/70" />
-                <span className="h-2 w-2 rounded-full bg-primary/70" />
-                <span className="h-2 w-2 rounded-full bg-muted-foreground/40" />
-              </span>
-            </div>
-            <dl className="mt-4 space-y-3 font-display text-sm">
-              <Row k="name" v="Fareed Manawwar" />
-              <Row k="role" v="AI Agent Builder" />
-              <Row k="edu" v="B.Tech · AKTU · Year 2" />
-              <Row k="stack" v="C · C++ · Python" />
-              <Row k="focus" v="Prompt Engineering" />
-              <Row k="status" v={<span className="text-primary">available</span>} />
-            </dl>
+          <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+            Hi, I'm <span className="bg-gradient-to-r from-sky-300 to-blue-500 bg-clip-text text-transparent">Fareed</span>.
+          </h1>
+          <p className="mt-5 text-lg text-white/70 md:text-xl">
+            Computer Science Student <span className="text-white/30">/</span> Aspiring AI Engineer
+          </p>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg">
+            I am a B.Tech Computer Science student passionate about Artificial Intelligence, software
+            development, and solving real-world problems. I enjoy building projects while continuously
+            learning modern technologies.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a href="#projects" className="btn-primary btn-primary-hover">
+              View Projects <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href="#" className="btn-ghost btn-ghost-hover">
+              <Download className="h-4 w-4" /> Download Resume
+            </a>
           </div>
         </div>
       </section>
 
       {/* ABOUT */}
-      <Section id="about" label="01 / About">
-        <div className="grid gap-10 md:grid-cols-2">
-          <p className="text-lg leading-relaxed text-foreground/90">
-            I am a second-year B.Tech student at Dr. A.P.J. Abdul Kalam Technical University,
-            focused on becoming an <span className="text-primary">AI Agent Builder</span>. My
-            current work centers on programming fundamentals, prompt engineering, and the design
-            principles behind modern autonomous agents.
-          </p>
-          <p className="text-base leading-relaxed text-muted-foreground">
-            I approach the field methodically — building competency in C and C++ for a strong
-            engineering foundation, learning Python as the working language of contemporary AI, and
-            practicing prompt engineering to interface effectively with large language models. The
-            objective is clear: to design and ship dependable AI agents.
-          </p>
+      <Section id="about" eyebrow="About" title="A snapshot of the journey so far">
+        <div className="card-surface p-6 md:p-10">
+          <ol className="relative space-y-6 border-l border-white/10 pl-6">
+            {timeline.map((t, i) => {
+              const Icon = t.icon;
+              return (
+                <li key={i} className="relative">
+                  <span className="absolute -left-[34px] flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-[#0B0F19] text-sky-400">
+                    <Icon className="h-3.5 w-3.5" />
+                  </span>
+                  <h3 className="text-base font-medium text-white">{t.title}</h3>
+                  <p className="mt-1 text-sm text-white/60">{t.body}</p>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </Section>
 
       {/* SKILLS */}
-      <Section id="skills" label="02 / Skills">
-        <div className="grid gap-4 md:grid-cols-3">
-          {skills.map((s) => (
-            <div key={s.name} className="surface-card p-5">
-              <div className="flex items-baseline justify-between">
-                <span className="font-display text-lg text-primary">{s.name}</span>
-                <span className="font-display text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                  {s.level}
-                </span>
+      <Section id="skills" eyebrow="Skills" title="Tools and technologies I work with">
+        <div className="grid gap-5 md:grid-cols-3">
+          {skillGroups.map((g) => {
+            const Icon = g.icon;
+            return (
+              <div key={g.title} className="card-surface p-6 transition hover:border-white/15">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-sky-400">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="text-lg font-medium">{g.title}</h3>
+                </div>
+                <ul className="mt-5 space-y-2">
+                  {g.items.map((it) => (
+                    <li
+                      key={it.name}
+                      className="flex items-center justify-between rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2 text-sm"
+                    >
+                      <span className="text-white/90">{it.name}</span>
+                      {it.note && (
+                        <span className="text-xs text-sky-300/80">{it.note}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="mt-4 h-[3px] w-full overflow-hidden rounded bg-muted">
-                <div
-                  className="h-full bg-primary shadow-glow"
-                  style={{
-                    width:
-                      s.level === "Proficient"
-                        ? "82%"
-                        : s.level === "Working knowledge"
-                          ? "60%"
-                          : s.level === "Practicing"
-                            ? "55%"
-                            : "40%",
-                  }}
-                />
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* PROJECTS */}
+      <Section id="projects" eyebrow="Projects" title="Selected work and experiments">
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((p) => (
+            <article
+              key={p.title}
+              className="card-surface group relative flex flex-col p-7 transition hover:border-white/15"
+            >
+              <h3 className="text-xl font-semibold text-white">{p.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/60">{p.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {p.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-white/70"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-7 flex gap-3">
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost btn-ghost-hover !py-2 !px-3 text-xs"
+                >
+                  <Github className="h-4 w-4" /> GitHub
+                </a>
+                <a
+                  href={p.demo}
+                  className="btn-primary btn-primary-hover !py-2 !px-3 text-xs"
+                >
+                  <ExternalLink className="h-4 w-4" /> Live Demo
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* CERTIFICATIONS */}
+      <Section id="certifications" eyebrow="Certifications" title="Credentials and coursework">
+        <div className="grid gap-5 md:grid-cols-2">
+          {certifications.map((c) => (
+            <div key={c.title} className="card-surface p-6">
+              <div className="flex items-start gap-4">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-sky-400">
+                  <Award className="h-5 w-5" />
+                </span>
+                <div>
+                  <h3 className="text-base font-medium text-white">{c.title}</h3>
+                  <p className="mt-1 text-xs uppercase tracking-wider text-white/40">{c.issuer}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-white/60">{c.body}</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* FOCUS */}
-      <Section id="focus" label="03 / Focus Areas">
-        <div className="grid gap-4 md:grid-cols-3">
-          {focusAreas.map((f) => (
-            <article key={f.code} className="surface-card p-6 scanline">
-              <span className="font-display text-xs tracking-[0.2em] text-accent">{f.code}</span>
-              <h3 className="mt-3 font-display text-xl text-foreground">{f.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      {/* PROJECTS */}
-      <Section id="projects" label="04 / Projects">
-        <div className="surface-card p-8 text-center">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-primary/50 font-display text-primary shadow-glow">
-            &gt;_
-          </div>
-          <h3 className="mt-5 font-display text-xl text-foreground">Repository initializing</h3>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Featured projects are currently in development. This section will be populated with
-            AI-agent experiments and engineering work as they are completed and published.
-          </p>
-          <a
-            href="https://github.com/1-Fareed"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-block rounded-md border border-primary/50 px-5 py-2 font-display text-[11px] uppercase tracking-[0.2em] text-primary hover:shadow-glow transition"
-          >
-            Follow on GitHub →
-          </a>
-        </div>
-      </Section>
-
-      {/* RESUME */}
-      <Section id="resume" label="05 / Resume">
-        <div className="surface-card flex flex-col items-start justify-between gap-6 p-6 md:flex-row md:items-center">
-          <div>
-            <h3 className="font-display text-xl text-foreground">Curriculum Vitae</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              The current resume is being prepared. A downloadable link will be provided here upon
-              completion.
-            </p>
-          </div>
-          <span className="chip">Status: pending upload</span>
-        </div>
-      </Section>
-
       {/* CONTACT */}
-      <Section id="contact" label="06 / Contact">
-        <div className="grid gap-4 md:grid-cols-3">
-          <ContactCard
-            label="Email"
-            value="fareedmanawwar1@gmail.com"
-            href="mailto:fareedmanawwar1@gmail.com"
-          />
-          <ContactCard
-            label="GitHub"
-            value="@1-Fareed"
-            href="https://github.com/1-Fareed"
-          />
-          <ContactCard
-            label="LinkedIn"
-            value="fareed-manawwar"
-            href="https://www.linkedin.com/in/fareed-manawwar-8570833ab"
-          />
+      <Section id="contact" eyebrow="Contact" title="Let's build something together">
+        <div className="card-surface p-8 md:p-12">
+          <p className="max-w-xl text-base text-white/60">
+            I'm open to internships, collaborations, and learning opportunities. Reach out through
+            any of the channels below.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <ContactCard
+              icon={Mail}
+              label="Email"
+              value="fareedmanawwar1@gmail.com"
+              href="mailto:fareedmanawwar1@gmail.com"
+            />
+            <ContactCard
+              icon={Linkedin}
+              label="LinkedIn"
+              value="fareed-manawwar"
+              href="https://www.linkedin.com/in/fareed-manawwar-8570833ab"
+            />
+            <ContactCard
+              icon={Github}
+              label="GitHub"
+              value="@1-Fareed"
+              href="https://github.com/1-Fareed"
+            />
+          </div>
         </div>
       </Section>
 
-      <footer className="border-t border-border/60 py-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 font-display text-[11px] uppercase tracking-[0.25em] text-muted-foreground md:flex-row">
-          <span>© {new Date().getFullYear()} Fareed Manawwar</span>
-          <span className="text-primary">// end_of_transmission</span>
+      <footer className="border-t border-white/10 py-10">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 text-xs text-white/40 md:flex-row">
+          <span>© {new Date().getFullYear()} Fareed Manawwar. All rights reserved.</span>
+          <span>Designed & built with care.</span>
         </div>
       </footer>
     </main>
   );
 }
 
-function Row({ k, v }: { k: string; v: React.ReactNode }) {
-  return (
-    <div className="flex items-center justify-between gap-4 border-b border-border/50 pb-2 last:border-none">
-      <dt className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">{k}</dt>
-      <dd className="text-right text-sm text-foreground">{v}</dd>
-    </div>
-  );
-}
-
 function Section({
   id,
-  label,
+  eyebrow,
+  title,
   children,
 }: {
   id: string;
-  label: string;
+  eyebrow: string;
+  title: string;
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mx-auto max-w-6xl px-6 py-16">
-      <div className="mb-8 flex items-center gap-4">
-        <span className="font-display text-xs uppercase tracking-[0.3em] text-primary">
-          {label}
-        </span>
-        <span className="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
+    <section id={id} className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mb-10 max-w-2xl">
+        <div className="text-xs font-medium uppercase tracking-[0.18em] text-sky-400">{eyebrow}</div>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">
+          {title}
+        </h2>
       </div>
       {children}
     </section>
   );
 }
 
-function ContactCard({ label, value, href }: { label: string; value: string; href: string }) {
+function ContactCard({
+  icon: Icon,
+  label,
+  value,
+  href,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: string;
+  href: string;
+}) {
   return (
     <a
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel="noreferrer"
-      className="surface-card group block p-5 transition hover:shadow-glow"
+      className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-4 transition hover:border-white/20 hover:bg-white/[0.04]"
     >
-      <div className="font-display text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-        {label}
+      <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-sky-400">
+        <Icon className="h-5 w-5" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <div className="text-xs uppercase tracking-wider text-white/40">{label}</div>
+        <div className="truncate text-sm text-white">{value}</div>
       </div>
-      <div className="mt-2 truncate font-display text-base text-primary group-hover:text-glow">
-        {value}
-      </div>
-      <div className="mt-4 font-display text-[11px] uppercase tracking-[0.2em] text-accent">
-        open →
-      </div>
+      <ArrowRight className="h-4 w-4 text-white/30 transition group-hover:translate-x-0.5 group-hover:text-white/70" />
     </a>
   );
 }
