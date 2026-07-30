@@ -277,8 +277,8 @@ function Index() {
       {/* CERTIFICATIONS */}
       <Section id="certifications" eyebrow="Certifications" title="Credentials and coursework">
         <div className="grid gap-5 md:grid-cols-2">
-          {certifications.map((c) => (
-            <div key={c.title} className="card-surface p-6">
+          {certifications.map((c, i) => (
+            <div key={i} className="card-surface p-6">
               <div className="flex items-start gap-4">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-sky-400">
                   <Award className="h-5 w-5" />
@@ -287,6 +287,14 @@ function Index() {
                   <h3 className="text-base font-medium text-white">{c.title}</h3>
                   <p className="mt-1 text-xs uppercase tracking-wider text-white/40">{c.issuer}</p>
                   <p className="mt-3 text-sm leading-relaxed text-white/60">{c.body}</p>
+                  <a
+                    href={c.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-ghost btn-ghost-hover mt-5 !py-2 !px-3 text-xs"
+                  >
+                    <ExternalLink className="h-4 w-4" /> View Certificate
+                  </a>
                 </div>
               </div>
             </div>
