@@ -55,7 +55,7 @@ const navLinks = [
 const timeline = [
   { icon: GraduationCap, title: "B.Tech Computer Science", body: "Dr. A.P.J. Abdul Kalam Technical University (AKTU)." },
   { icon: BookOpen, title: "First Year Completed", body: "Foundations in computing, mathematics, and programming." },
-  { icon: Award, title: "CGPA", body: "To be updated." },
+  
   { icon: Brain, title: "Learning AI Agents", body: "Studying agent design, tool use, and orchestration." },
   { icon: Sparkles, title: "Learning Prompt Engineering", body: "Practicing structured, reliable prompting techniques." },
   { icon: Code2, title: "Learning C Programming", body: "Strengthening low-level and algorithmic thinking." },
@@ -111,9 +111,22 @@ const projects = [
 
 const certifications = [
   {
-    title: "Certifications in progress",
+    title: "Certificate of Completion",
     issuer: "Coursework & self-study",
-    body: "Actively pursuing certifications in AI, prompt engineering, and programming. Verified credentials will appear here.",
+    body: "Verified credential issued for completed coursework.",
+    link: "https://drive.google.com/file/d/1HTYISMYRHWhbBuzz8fKePhXHttvUqfta/view?usp=drive_link",
+  },
+  {
+    title: "Certificate of Completion",
+    issuer: "Coursework & self-study",
+    body: "Verified credential issued for completed coursework.",
+    link: "https://drive.google.com/file/d/117zsBpBgRXX4GyI5SmHQ2pVHjDeZrD90/view?usp=drive_link",
+  },
+  {
+    title: "Certificate of Completion",
+    issuer: "Coursework & self-study",
+    body: "Verified credential issued for completed coursework.",
+    link: "https://drive.google.com/file/d/16GjQYv6fI0QgQ3MAPnLQ8074-jzGDtKO/view?usp=drive_link",
   },
 ];
 
