@@ -101,8 +101,8 @@
 @utility text-gradient {
   background: linear-gradient(
     180deg,
-    var(--color-foreground),
-    color-mix(in oklab, var(--color-foreground) 55%, transparent)
+    var(--color-foreground) 30%,
+    color-mix(in oklab, var(--color-foreground) 72%, transparent)
   );
   -webkit-background-clip: text;
   background-clip: text;

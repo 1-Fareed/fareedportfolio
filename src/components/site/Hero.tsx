@@ -44,7 +44,7 @@ export function Hero() {
 
         <h1 className="mt-8 text-[clamp(3rem,11vw,8.5rem)] font-semibold leading-[0.92] tracking-[-0.05em]">
           {words.map((word, i) => (
-            <span key={word} className="block overflow-hidden">
+            <span key={word} className="block overflow-hidden pb-[0.06em]">
               <motion.span
                 className="block text-gradient"
                 initial={{ y: "100%" }}
