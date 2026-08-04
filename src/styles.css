@@ -8,106 +8,121 @@
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 6px);
-  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --radius-2xl: calc(var(--radius) + 16px);
+  --radius-3xl: calc(var(--radius) + 28px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--subtle);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 :root {
   --radius: 0.75rem;
-  --background: #0B0F19;
-  --foreground: oklch(0.98 0.005 240);
-  --card: #10151F;
-  --card-foreground: oklch(0.98 0.005 240);
-  --muted: #151B27;
-  --muted-foreground: oklch(0.70 0.02 240);
-  --primary: oklch(0.72 0.15 230);
-  --primary-foreground: #0B0F19;
-  --accent: oklch(0.80 0.13 200);
-  --accent-foreground: #0B0F19;
-  --border: oklch(1 0 0 / 8%);
-  --ring: oklch(0.72 0.15 230 / 60%);
-
-  --shadow-soft: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.25);
-  --shadow-card: 0 1px 0 rgba(255,255,255,0.04) inset, 0 20px 40px -20px rgba(0,0,0,0.6);
+  --background: oklch(0.16 0.012 265);
+  --foreground: oklch(0.97 0.004 265);
+  --card: oklch(0.19 0.014 265);
+  --card-foreground: oklch(0.97 0.004 265);
+  --muted: oklch(0.22 0.014 265);
+  --muted-foreground: oklch(0.70 0.015 265);
+  --subtle: oklch(0.55 0.015 265);
+  --primary: oklch(0.72 0.15 232);
+  --primary-foreground: oklch(0.16 0.012 265);
+  --accent: oklch(0.82 0.12 196);
+  --accent-foreground: oklch(0.16 0.012 265);
+  --border: oklch(1 0 0 / 9%);
+  --ring: oklch(0.72 0.15 232 / 55%);
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html, body {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  html,
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-  body {
-    background-image:
-      radial-gradient(1000px 500px at 15% -10%, rgba(56,189,248,0.08), transparent 60%),
-      radial-gradient(800px 500px at 90% 10%, rgba(59,130,246,0.06), transparent 60%);
-    background-attachment: fixed;
-    min-height: 100vh;
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 35%, transparent);
+    color: var(--color-foreground);
   }
-  h1, h2, h3, h4 { letter-spacing: -0.02em; font-weight: 600; }
-  ::selection { background: rgba(56,189,248,0.25); }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.03em;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
 
-@utility card-surface {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+@utility surface {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--color-card) 92%, transparent),
+      color-mix(in oklab, var(--color-background) 88%, transparent)
+    );
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-card);
-}
-@utility glass-nav {
-  background: rgba(11, 15, 25, 0.65);
-  backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid var(--color-border);
-}
-@utility btn-primary {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  background: var(--color-primary);
-  color: var(--color-primary-foreground);
-  border-radius: var(--radius-xl);
-  padding: 0.7rem 1.1rem;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-  box-shadow: 0 8px 20px -8px rgba(56,189,248,0.5);
-}
-@utility btn-primary-hover {
-  &:hover { transform: translateY(-1px); background: oklch(0.78 0.14 225); }
-}
-@utility btn-ghost {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  background: transparent;
-  color: var(--color-foreground);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: 0.7rem 1.1rem;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: background .2s ease, border-color .2s ease;
-}
-@utility btn-ghost-hover {
-  &:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.18); }
+  box-shadow:
+    0 1px 0 0 rgb(255 255 255 / 0.05) inset,
+    0 24px 60px -32px rgb(0 0 0 / 0.85);
 }
 
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+@utility glass {
+  background: color-mix(in oklab, var(--color-card) 55%, transparent);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--color-border);
 }
-@utility animate-fade-up {
-  animation: fade-up 0.7s ease-out both;
+
+@utility text-gradient {
+  background: linear-gradient(
+    180deg,
+    var(--color-foreground) 30%,
+    color-mix(in oklab, var(--color-foreground) 72%, transparent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--color-foreground) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-foreground) 5%, transparent) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+@utility hover-lift {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+  &:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--color-primary) 40%, transparent);
+  }
 }
