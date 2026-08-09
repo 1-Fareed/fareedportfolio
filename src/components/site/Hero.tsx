@@ -72,7 +72,7 @@ export function Hero() {
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </MagneticButton>
             <MagneticButton href={site.resume} external variant="ghost">
-              Résumé
+              Resume
             </MagneticButton>
           </div>
         </motion.div>
