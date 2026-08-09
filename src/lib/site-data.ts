@@ -65,7 +65,7 @@ export const skillGroups = [
 
 export const certifications = [
   {
-    title: "Certificate of Completion",
+    title: "Certificate of Azure by Microsoft",
     issuer: "Verified credential",
     href: "https://drive.google.com/file/d/1HTYISMYRHWhbBuzz8fKePhXHttvUqfta/view?usp=drive_link",
   },
