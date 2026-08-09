@@ -1,26 +1,65 @@
-# Cyber Identity Hub
+# Fareed Manawwar — Personal Portfolio
 
-Create a website for me to introduce myself to others , an introductory site which will consist my details the skills I have it will have my resume link and my projects and my goal site's theme should be dark cyber, it should be concise yet detailed tone must be formal ,ask me whatever info u need of mine to build this
+A modern personal portfolio website showcasing my background, projects, skills, certifications, and experience in AI, automation, and software development.
 
-This project was built with [Lovable](https://lovable.dev).
+## Live Website
 
-**Live app**: https://fareedportfolio.lovable.app
+https://fareedportfolio.lovable.app
 
-## Build with Lovable
+## About the Project
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e72e418b-8878-4e1d-a44c-defe7232eb97).
+This portfolio was created as a personal branding and frontend development project. The goal was to build a clean, modern and responsive website that presents my technical skills, projects, learning journey, certifications and contact information in one place.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Features
 
-## Development
+- Premium hero / landing section
+- Floating navigation
+- About section
+- Experience timeline
+- Project showcase
+- Skills dashboard
+- Certifications section
+- Statistics section
+- Contact section
+- Resume access
+- Responsive design
+- Smooth animations
+- SEO and accessibility improvements
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Tech Stack
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Lovable
+
+## AI-Assisted Development
+
+Lovable was used as an AI-assisted development tool during the creation and refinement of this portfolio. It helped with generating UI components, improving layouts, refining the visual design, and making frontend changes through natural-language prompts.
+
+## Project Structure
+
+- `src/` — Main application source code
+- `public/` — Public assets
+- `.lovable/` — Lovable project configuration
+- `package.json` — Project dependencies and scripts
+
+## Deployment
+
+The portfolio is deployed and publicly available at:
+
+https://fareedportfolio.lovable.app
+
+## Author
+
+**Fareed Manawwar**
+
+B.Tech CSE Student
+
+Interested in Artificial Intelligence, automation, software development, and prompt engineering.
+
+## License
+
+This project is created for educational and portfolio purposes.
