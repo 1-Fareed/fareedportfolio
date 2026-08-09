@@ -1,3 +1,5 @@
+import resumeAsset from "@/assets/Fareed_Manawwar_Resume.pdf.asset.json";
+
 export const site = {
   name: "Fareed Manawwar",
   role: "AI & Automation Engineer in the making",
@@ -6,9 +8,8 @@ export const site = {
   location: "India",
   email: "fareedmanawwar@gmail.com",
   github: "https://github.com/1-Fareed",
-  linkedin: "https://www.linkedin.com/in/fareed-manawwar",
-  resume:
-    "https://1drv.ms/w/c/a4a23dbf191269fc/IQAZ9SPawy-MSZOm3tx1Gbn4ARQboZFsg8J2zBlI-U-vSUc?e=iijLAc",
+  linkedin: "https://www.linkedin.com/in/fareedmanawwar",
+  resume: resumeAsset.url,
 };
 
 export const about = [
